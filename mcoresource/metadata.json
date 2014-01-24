@@ -1,0 +1,79 @@
+{
+  "name": "fiddyspence/mcoresource",
+  "version": "0.3.0",
+  "source": "https://github.com/fiddyspence/mcoresource.git",
+  "author": "fiddyspence",
+  "license": "Apache License, Version 2.0",
+  "summary": "Puppet type/provider for triggering MCollective",
+  "description": "UNKNOWN",
+  "project_page": "https://github.com/fiddyspence/mcoresource.git",
+  "dependencies": [
+
+  ],
+  "types": [
+    {
+      "name": "mco",
+      "doc": "    This type provides a core resource to trigger MCollective\n",
+      "properties": [
+        {
+          "name": "returns",
+          "doc": ""
+        }
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The name of the job"
+        },
+        {
+          "name": "wait",
+          "doc": "the agent we want to call  Valid values are `true`, `false`."
+        },
+        {
+          "name": "agent",
+          "doc": "the agent we want to call"
+        },
+        {
+          "name": "action",
+          "doc": "The action on the agent"
+        },
+        {
+          "name": "filter",
+          "doc": "What filtering to apply"
+        },
+        {
+          "name": "parameters",
+          "doc": ""
+        },
+        {
+          "name": "optionhash",
+          "doc": ""
+        },
+        {
+          "name": "configfile",
+          "doc": "What filtering to apply"
+        },
+        {
+          "name": "refreshonly",
+          "doc": "  Valid values are `true`, `false`."
+        }
+      ],
+      "providers": [
+        {
+          "name": "mco",
+          "doc": ""
+        }
+      ]
+    }
+  ],
+  "checksums": {
+    "LICENSE": "8f7bb094c7232b058c7e9f2e431f389c",
+    "Modulefile": "54689a9a8a1cc098841c0b5bbf768458",
+    "README.md": "205a6f6274c83b247f0d905911903885",
+    "lib/puppet/provider/mco/mco.rb": "bb240b45538aa0e1a19cc88d0743db7a",
+    "lib/puppet/type/mco.rb": "6de3e8f325822c9a0008540ca35e676c",
+    "manifests/init.pp": "e24e34a2897a21b7a1f9dfe74b982dd3",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "tests/init.pp": "7038ef1e44f2391a8e988a8814e7bcbe"
+  }
+}

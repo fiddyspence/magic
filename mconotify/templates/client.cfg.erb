@@ -1,0 +1,29 @@
+# This file managed by Puppet 3.3.1 (Puppet Enterprise 3.1.0)
+topicprefix     = /topic/
+main_collective = mcollective
+collectives     = mcollective
+libdir          = /opt/puppet/libexec/mcollective/
+logfile         = <%= @mco_vardir %>/client.log
+loglevel        = info
+
+securityprovider = ssl
+plugin.ssl_client_private = <%= @mco_vardir %>/mconotify-private.pem
+plugin.ssl_client_public = <%= @mco_vardir %>/mconotify-public.pem
+plugin.ssl_server_public = <%= @mco_vardir %>/mcollective-public.pem
+plugin.ssl_serializer     = yaml
+
+connector = activemq
+plugin.activemq.pool.size = 1
+plugin.activemq.pool.1.host = master
+plugin.activemq.pool.1.port = 61613
+plugin.activemq.pool.1.user = mcollective
+plugin.activemq.pool.1.password = <%= File.read('/etc/puppetlabs/mcollective/credentials') %>
+plugin.activemq.pool.1.ssl = true
+plugin.activemq.pool.1.ssl.ca = <%= @mco_vardir %>/mconotify-cacert.pem
+plugin.activemq.pool.1.ssl.key = <%= @mco_vardir %>/mconotify-private.pem
+plugin.activemq.pool.1.ssl.cert = <%= @mco_vardir %>/mconotify-cert.pem
+
+# Facts
+factsource = yaml
+plugin.yaml = /etc/puppetlabs/mcollective/facts.yaml
+direct_addressing = 1

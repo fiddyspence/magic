@@ -1,0 +1,10 @@
+magic
+
+This is the magic module. It is magic, but do not actually use it.
+
+The $config variable should look like:
+
+    magic::config:
+      balancers: 2
+      webservers: 1
+      otherthing: 2

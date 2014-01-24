@@ -1,0 +1,5 @@
+---
+:mcoconfig: /var/opt/lib/pe-puppet/.mcollective
+:mcotimeout: 5
+:delimiter: --
+:debug: true
