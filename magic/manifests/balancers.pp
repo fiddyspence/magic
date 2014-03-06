@@ -4,7 +4,17 @@ class magic::balancers {
   haproxy::listen { 'magicwithunicornsandrainbows':
     ipaddress => $::ipaddress_eth1,
     ports     => '80',
+    options   => ['tcplog'],
   }
+
+  haproxy::listen { 'stats':
+    ipaddress => $::ipaddress,
+    ports     => '9090',
+    options   => {
+      'mode'  => 'http',
+      'stats' => ['uri /', 'auth puppet:puppet']
+      },
+    }
 
   $balancers  = query_nodes('Class[magic::webservers]')
 
